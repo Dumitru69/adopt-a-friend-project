@@ -1,0 +1,14 @@
+.filters .checkboxes-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+  border: 2px solid gray;
+  border-radius: 20px;
+}
+
+.filters {
+  padding: 20px;
+}

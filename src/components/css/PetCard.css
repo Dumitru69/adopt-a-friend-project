@@ -1,8 +1,19 @@
 .pet-card-div {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 250px;
+  gap: 15px;
+  padding: 20px;
+  margin: 0;
 }
 
 .pet-card-div .petImage {
-  width: 120px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.pet-text-div > :first-child {
 }

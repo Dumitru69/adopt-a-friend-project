@@ -1,20 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/header";
-import Main from "./components/main";
+import Filters from "./components/Filters";
 import PetCard from "./components/PetCard";
 import React, { useEffect, useState } from "react";
-
-// function App() {
-//   return (
-//     <div>
-//       <Header></Header>
-//       <Main></Main>
-//     </div>
-//   );
-// }
-
-// export default App;
 
 const App = () => {
   const [petsData, setPetsData] = useState([]);
@@ -32,18 +21,22 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className="main-content">
       <Header></Header>
-      <Main></Main>
-      {petsData.map((pet) => (
-        <PetCard
-          key={pet.id} // Use the unique `id` from the JSON as the key
-          dogName={pet.dogName}
-          breed={pet.breed}
-          description={pet.description}
-          image={pet.image}
-        />
-      ))}
+      <Filters></Filters>
+      <div className="app-card-div max-space-available">
+        {petsData.map((pet) => (
+          <PetCard
+            className="pet-cards"
+            key={pet.id} // Use the unique `id` from the JSON as the key
+            dogName={pet.dogName}
+            gender={pet.gender}
+            breed={pet.breed}
+            description={pet.description}
+            image={pet.image}
+          />
+        ))}
+      </div>
     </div>
   );
 };
