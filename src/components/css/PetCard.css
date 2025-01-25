@@ -1,0 +1,8 @@
+.pet-card-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.pet-card-div .petImage {
+  width: 120px;
+}

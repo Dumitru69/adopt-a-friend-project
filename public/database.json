@@ -1,0 +1,224 @@
+{
+  "pets": [
+    {
+      "id": 1,
+      "dogName": "Buddy",
+      "breed": "Labrador Retriever",
+      "age": 3,
+      "gender": "Male",
+      "description": "Buddy was found in Central Park. He is friendly with other animals, new people, and children.",
+      "type": "Dog",
+      "isAdopted": false,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 2,
+      "dogName": "Bella",
+      "breed": "Beagle",
+      "age": 2,
+      "gender": "Female",
+      "description": "Bella was found near Maple Street. She isn't very friendly with other animals but loves new people and children.",
+      "type": "Dog",
+      "isAdopted": false,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 3,
+      "dogName": "Max",
+      "breed": "German Shepherd",
+      "age": 5,
+      "gender": "Male",
+      "description": "Max was found near a busy intersection. He is friendly with other animals and new people but isn't great with children.",
+      "type": "Dog",
+      "isAdopted": true,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 4,
+      "dogName": "Lucy",
+      "breed": "Golden Retriever",
+      "age": 4,
+      "gender": "Female",
+      "description": "Lucy was found in a residential neighborhood. She is friendly with other animals, new people, and children.",
+      "type": "Dog",
+      "isAdopted": false,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 5,
+      "dogName": "Charlie",
+      "breed": "Bulldog",
+      "age": 6,
+      "gender": "Male",
+      "description": "Charlie was found at the local park. He isn't friendly with other animals but loves people and children.",
+      "type": "Dog",
+      "isAdopted": false,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 6,
+      "dogName": "Molly",
+      "breed": "Poodle",
+      "age": 1,
+      "gender": "Female",
+      "description": "Molly was found near the beach. She is friendly with other animals, new people, and children.",
+      "type": "Dog",
+      "isAdopted": true,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 7,
+      "dogName": "Rocky",
+      "breed": "Boxer",
+      "age": 7,
+      "gender": "Male",
+      "description": "Rocky was found in the woods. He is friendly with other animals but needs time to warm up to new people and children.",
+      "type": "Dog",
+      "isAdopted": false,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 8,
+      "dogName": "Sadie",
+      "breed": "Dachshund",
+      "age": 4,
+      "gender": "Female",
+      "description": "Sadie was found in a busy shopping area. She is friendly with children and people but is not great with other animals.",
+      "type": "Dog",
+      "isAdopted": true,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 9,
+      "dogName": "Cooper",
+      "breed": "Cocker Spaniel",
+      "age": 5,
+      "gender": "Male",
+      "description": "Cooper was found in a suburban neighborhood. He is friendly with other animals and children, but a bit shy with new people.",
+      "type": "Dog",
+      "isAdopted": false,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 10,
+      "dogName": "Daisy",
+      "breed": "Shih Tzu",
+      "age": 2,
+      "gender": "Female",
+      "description": "Daisy was found near the city center. She is friendly with other animals, new people, and children.",
+      "type": "Dog",
+      "isAdopted": false,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 11,
+      "dogName": "Whiskers",
+      "breed": "Siamese",
+      "age": 2,
+      "gender": "Male",
+      "description": "Whiskers was found near the city library. He is friendly with other animals, new people, and children.",
+      "type": "Cat",
+      "isAdopted": false,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 12,
+      "dogName": "Luna",
+      "breed": "Persian",
+      "age": 3,
+      "gender": "Female",
+      "description": "Luna was found in a quiet suburban neighborhood. She is friendly with people but not with other animals or children.",
+      "type": "Cat",
+      "isAdopted": true,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 13,
+      "dogName": "Oliver",
+      "breed": "Maine Coon",
+      "age": 4,
+      "gender": "Male",
+      "description": "Oliver was found in a local park. He is friendly with other animals, new people, and children.",
+      "type": "Cat",
+      "isAdopted": false,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 14,
+      "dogName": "Bella",
+      "breed": "Ragdoll",
+      "age": 1,
+      "gender": "Female",
+      "description": "Bella was found near a downtown coffee shop. She is friendly with other animals and children but a bit shy with new people.",
+      "type": "Cat",
+      "isAdopted": false,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 15,
+      "dogName": "Max",
+      "breed": "British Shorthair",
+      "age": 5,
+      "gender": "Male",
+      "description": "Max was found in a quiet alley. He isn't friendly with other animals but is very affectionate with people and children.",
+      "type": "Cat",
+      "isAdopted": true,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 16,
+      "dogName": "Mittens",
+      "breed": "Bengal",
+      "age": 3,
+      "gender": "Female",
+      "description": "Mittens was found near a pet store. She is friendly with other animals and new people but a little reserved with children.",
+      "type": "Cat",
+      "isAdopted": false,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 17,
+      "dogName": "Shadow",
+      "breed": "Russian Blue",
+      "age": 2,
+      "gender": "Male",
+      "description": "Shadow was found in the woods. He is friendly with new people and children but doesn't get along with other animals.",
+      "type": "Cat",
+      "isAdopted": false,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 18,
+      "dogName": "Sophie",
+      "breed": "Sphynx",
+      "age": 4,
+      "gender": "Female",
+      "description": "Sophie was found at a busy intersection. She is friendly with people and children but very shy around other animals.",
+      "type": "Cat",
+      "isAdopted": true,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 19,
+      "dogName": "Toby",
+      "breed": "Abyssinian",
+      "age": 3,
+      "gender": "Male",
+      "description": "Toby was found in a small neighborhood. He is friendly with other animals, new people, and children.",
+      "type": "Cat",
+      "isAdopted": false,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 20,
+      "dogName": "Ginger",
+      "breed": "American Shorthair",
+      "age": 6,
+      "gender": "Female",
+      "description": "Ginger was found in an industrial area. She isn't very friendly with other animals but loves people and children.",
+      "type": "Cat",
+      "isAdopted": false,
+      "image": "https://via.placeholder.com/150"
+    }
+  ]
+}
