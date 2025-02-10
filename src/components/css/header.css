@@ -5,14 +5,15 @@
 }
 
 .header-background {
-  background-color: rgb(211, 155, 0);
+  background-color: #d39b00;
 }
 
 .header-div img {
-  width: 98px;
+  width: 110px;
   height: auto;
   border-radius: 27px;
-  margin: 10px;
+  border: 2px solid var(--filters-black);
+  margin: 7px;
 }
 
 .header-div h1 {

@@ -1,0 +1,15 @@
+.Footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(22, 22, 22);
+}
+
+.Footer p {
+  color: rgba(240, 248, 255, 0.747);
+  margin: 0px;
+  padding-top: 8px;
+  font-size: 20px;
+  height: 2.5rem;
+}

@@ -1,42 +1,71 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/header";
 import Filters from "./components/Filters";
 import PetCard from "./components/PetCard";
 import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import PetPage from "./components/PetPage";
+import Footer from "./components/Footer";
+
+import getPetsData from "./utils/getPetsData";
 
 const App = () => {
   const [petsData, setPetsData] = useState([]);
+  const [filters, setFilters] = useState({
+    breed: [],
+    type: [],
+    gender: [],
+    age: "",
+  });
 
   useEffect(() => {
-    fetch("/database.json") // Fetch from the public folder
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => setPetsData(data.pets)) // Access the `pets` array in the JSON
-      .catch((error) => console.error("Error fetching JSON:", error));
+    getPetsData().then((data) => setPetsData(data));
   }, []);
+
+  const filteredPets = petsData.filter((pet) => {
+    const minAge = filters.minAge || 0; // Default to 0 if empty
+    const maxAge = filters.maxAge || Infinity; // Default to Infinity if empty
+
+    return (
+      (filters.breed.length === 0 || filters.breed.includes(pet.breed)) &&
+      (filters.type.length === 0 || filters.type.includes(pet.type)) &&
+      (filters.gender.length === 0 || filters.gender.includes(pet.gender)) &&
+      pet.age >= minAge &&
+      pet.age <= maxAge // Filter within range
+    );
+  });
 
   return (
     <div className="main-content">
-      <Header></Header>
-      <Filters></Filters>
-      <div className="app-card-div max-space-available">
-        {petsData.map((pet) => (
-          <PetCard
-            className="pet-cards"
-            key={pet.id} // Use the unique `id` from the JSON as the key
-            dogName={pet.dogName}
-            gender={pet.gender}
-            breed={pet.breed}
-            description={pet.description}
-            image={pet.image}
-          />
-        ))}
-      </div>
+      <Router>
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div className="filt-cards-div max-space-1700">
+                {/* Pass filters and setFilters to Filters */}
+                <Filters filters={filters} setFilters={setFilters} />
+                <div className="app-card-div">
+                  {filteredPets.map((pet) => (
+                    <PetCard
+                      className="pet-cards"
+                      pet={pet}
+                      key={pet.id}
+                      dogName={pet.dogName}
+                      gender={pet.gender}
+                      breed={pet.breed}
+                      image={pet.image}
+                    />
+                  ))}
+                </div>
+              </div>
+            }
+          ></Route>
+          <Route path="/pets/:id" element={<PetPage />}></Route>
+        </Routes>
+        <Footer />
+      </Router>
     </div>
   );
 };

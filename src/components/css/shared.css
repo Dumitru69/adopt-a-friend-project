@@ -1,4 +1,25 @@
 .max-space-available {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
+}
+
+.max-space-1600 {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.max-space-1700 {
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+:root {
+  /* --header-color: blue;*/
+  --bg-color: #f1f1f1;
+  --card-white: #f0ffff;
+  --gray-text: #808080;
+  --border-gray: gray;
+  --filters-black: black;
+  --adopt-badge-orange: #ff7300;
+  --adopt-badge-green: rgb(149, 219, 44);
 }
