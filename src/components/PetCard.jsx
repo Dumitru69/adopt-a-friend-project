@@ -4,22 +4,23 @@ import "./css/PetPage.css";
 import "./css/shared.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
+import LoadingScreen from "./LoadingScreen";
 
 function PetCard({ pet }) {
   if (!pet) {
-    return null; // Prevent errors if `pet` is undefined
+    return <LoadingScreen />;
   }
 
   return (
     <div className="pet-card-div">
-      <img className="petImage" src={pet.image} alt={pet.dogName} />
+      <img className="petImage" src={pet.image} alt={pet.petName} />
       <div className="pet-text-div">
-        <h1 className="dogName">{pet.dogName}</h1>
+        <h1 className="petName">{pet.petName}</h1>
         <p>{pet.breed}</p>
         <p>{pet.gender}</p>
         <div
-          className={`adopt-badge box ${
-            pet.isAdopted ? "bg-color-green" : "bg-color-orange"
+          className={`adopt-badge-card box ${
+            pet.isAdopted ? "bg-color-green" : "bg-color-yellow"
           }`}
         >
           <p>{pet.isAdopted ? "ADOPTED :D" : "NOT ADOPTED :C"}</p>

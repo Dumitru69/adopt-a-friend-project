@@ -1,11 +1,18 @@
 .main-content {
   background-color: var(--bg-color);
+  background-size: cover;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .main-content .filt-cards-div {
   display: flex;
   flex-direction: row;
+  flex: 1;
+  justify-content: flex-start;
+  width: 100%;
 }
 
 .app-card-div {
@@ -13,7 +20,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 30px 0px 38px 33px;
+  padding: 45px 0px 38px 33px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 600;
 }
@@ -21,4 +28,19 @@
 .main-content .pet-cards {
   display: flex;
   gap: 10px;
+}
+
+@media (max-width: 1545px) {
+  .main-content .filt-cards-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .app-card-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px 20px 0px;
+  }
 }

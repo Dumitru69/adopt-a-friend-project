@@ -1,3 +1,40 @@
+:root {
+  --text-black: #000000;
+  --text-black-unchanged: #000000;
+  --header-bg: #cfffff;
+  --hover-header-bg: #91fdfd;
+  --bg-color: #f1f1f1;
+  --checkbox-white: white;
+  --checkbox-white-opac: #b1b0b0;
+  --card-white: #f0ffff;
+  --card-white-unchanged: #f0ffff;
+  --gray-text: #808080;
+  --border-gray: gray;
+  --filters-black: black;
+  --adopt-badge-yellow: #f1ff29;
+  --adopt-badge-green: greenyellow;
+  --adopt-badge-green-disabled: #acff2f98;
+  transition: all 0.3s ease;
+}
+
+:root.dark-mode {
+  --text-black: #ffffff;
+  --text-black-unchanged: #000000;
+  --header-bg: #101324;
+  --hover-header-bg: #0025c9;
+  --bg-color: #1f1f1f;
+  --checkbox-white: #1f1f1f;
+  --checkbox-white-unchanged: #f0ffff;
+  --checkbox-white-opac: #4e4e4e;
+  --card-white: #002446;
+  --gray-text: #e6e6e6;
+  --border-gray: #808080;
+  --filters-black: #919191;
+  --adopt-badge-yellow: #cc8500;
+  --adopt-badge-green: #00ad00;
+  --adopt-badge-green-disabled: #acff2f98;
+}
+
 .max-space-available {
   max-width: 1500px;
   margin: 0 auto;
@@ -13,13 +50,16 @@
   margin: 0 auto;
 }
 
-:root {
-  /* --header-color: blue;*/
-  --bg-color: #f1f1f1;
-  --card-white: #f0ffff;
-  --gray-text: #808080;
-  --border-gray: gray;
-  --filters-black: black;
-  --adopt-badge-orange: #ff7300;
-  --adopt-badge-green: rgb(149, 219, 44);
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-black);
+  transition: background-color 0.5s ease, color 0.5s ease,
+    border-color 0.5s ease;
 }

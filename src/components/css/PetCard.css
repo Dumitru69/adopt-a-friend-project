@@ -8,10 +8,18 @@
   background-color: var(--card-white);
   border-radius: 20px;
   border: 2px solid var(--border-gray);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .pet-card-div * {
   margin: 0;
+}
+
+.pet-card-div,
+.petName,
+.adopt-badge-card,
+.pet-text-div {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .details-btn {
@@ -31,7 +39,7 @@
 
 .pet-card-div .petImage {
   width: 231px;
-  height: 205px;
+  min-height: 178px;
   object-fit: cover;
   border-radius: 20px;
   border: 2px solid var(--border-gray);
@@ -41,16 +49,18 @@
   padding-bottom: 0px;
   padding-left: 10px;
   font-size: 23px;
+  color: var(--text-black);
 }
 
-.pet-text-div .adopt-badge {
+.pet-text-div .adopt-badge-card {
+  color: var(--text-black-unchanged);
   border-radius: 10px;
   border: 1px solid var(--filters-black);
   text-align: center;
   margin: 5px 0px;
 }
 
-.pet-text-div .dogName {
+.pet-text-div .petName {
   font-size: 37px;
   margin-bottom: 5px;
   vertical-align: top;

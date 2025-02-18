@@ -2,11 +2,13 @@ import { useParams, Link } from "react-router-dom";
 import "./css/PetPage.css";
 import React, { useEffect, useState } from "react";
 import getPetsData from "../utils/getPetsData";
+import "./css/shared.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import LoadingScreen from "./LoadingScreen";
 
 const PetPage = () => {
   const { id } = useParams();
   const [pet, setPet] = useState(null);
-  const [isAdopted, setIsAdopted] = useState(true);
 
   useEffect(() => {
     getPetsData().then((data) => {
@@ -15,7 +17,7 @@ const PetPage = () => {
   }, [id]);
 
   if (!pet) {
-    return <p>Loading pet data...</p>;
+    return <LoadingScreen />;
   }
 
   return (
@@ -23,26 +25,24 @@ const PetPage = () => {
       <div className="home-btn-div">
         <Link to="/">
           <button className="home-btn btn">
-            <i class="bi bi-house-heart-fill"></i> Home
+            <i className="bi bi-house-heart-fill"></i> Home
           </button>
         </Link>
       </div>
       <div className="img-text-div">
         <div className="img-div">
-          <img src={pet.image} />
+          <img src={pet.image} alt={pet.petName} />
         </div>
         <div className="PetDetails">
-          <p>Name : {pet.dogName}</p>
+          <p>Name : {pet.petName}</p>
           <p>Breed : {pet.breed}</p>
           <p>Gender : {pet.gender}</p>
           <p>Age : {pet.age}</p>
-          <button
-            className={`adopt-btn box ${
-              pet.isAdopted ? "bg-color-green" : "bg-color-orange"
-            }`}
-          >
-            {pet.isAdopted ? "ADOPTED :D" : "NOT ADOPTED :C"}
-          </button>
+          <Link to={`/adoption-page`}>
+            <button className="adopt-btn" disabled={pet.isAdopted}>
+              <span>{pet.isAdopted ? "Adopted :D" : "Adopt Me!"}</span>
+            </button>
+          </Link>
         </div>
       </div>
       <div className="desc-div">

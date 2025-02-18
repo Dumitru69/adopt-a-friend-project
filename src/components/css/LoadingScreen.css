@@ -1,0 +1,19 @@
+.loading-screen {
+  text-align: center;
+  font-size: 70px;
+  font-weight: 600;
+  font-family: "Trebuchet MS", sans-serif;
+  display: inline-block;
+  color: var(--text-black);
+}
+
+.load-div {
+  position: absolute;
+  max-width: 1400px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 40px;
+}

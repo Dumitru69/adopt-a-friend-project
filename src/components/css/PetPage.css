@@ -1,18 +1,30 @@
 .PetPage {
   padding-bottom: 20px;
-  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.PetDetails,
+.PetDetails p,
+.desc-div,
+.desc-div h3,
+.description {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .home-btn-div .home-btn {
   font-size: 23px;
-  color: aliceblue;
+  color: var(--text-black);
   font-weight: 600;
-  background-color: #001652;
+  background-color: var(--header-bg);
+  border: 1px solid var(--border-gray);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease-in-out;
 }
 
 .home-btn-div .home-btn:hover {
-  background-color: #001652c2;
+  background-color: var(--hover-header-bg);
 }
 
 .home-btn-div {
@@ -27,12 +39,14 @@
 .desc-div h3 {
   margin: 0;
   padding-bottom: 15px;
+  color: var(--text-black);
 }
 
 .desc-div {
   padding: 25px;
   margin-top: 40px;
   box-shadow: 9px 8px 11px -1px #00000052;
+  flex-wrap: wrap;
 }
 
 .desc-div .description {
@@ -40,16 +54,19 @@
   margin: 0px;
   font-size: 30px;
   font-weight: 600;
+  color: var(--text-black);
 }
 
 .PetDetails {
   display: flex;
   flex-direction: column;
   background-color: var(--card-white);
-  padding: 20px 0px 0px 35px;
+  padding: 20px 0px 20px 35px;
   border-radius: 20px;
   box-shadow: 9px 8px 11px -1px #00000052;
   width: 100%;
+  position: relative;
+  color: var(--text-black);
 }
 
 .PetDetails p {
@@ -62,21 +79,13 @@
   background-color: var(--adopt-badge-green);
 }
 
-.bg-color-orange {
-  background-color: var(--adopt-badge-orange);
-}
-
-.PetDetails .adopt-btn {
-  min-width: 150px;
-  max-width: 300px;
-  height: 50px;
-  font-weight: 700;
-  font-family: "Trebuchet MS", sans-serif;
+.bg-color-yellow {
+  background-color: var(--adopt-badge-yellow);
 }
 
 .img-text-div {
   display: flex;
-  gap: 40px;
+  gap: 30px;
 }
 
 .img-div {
@@ -88,7 +97,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 5px 5px 11px 7px #00000052;
+  box-shadow: 9px 8px 11px -1px #00000052;
 }
 
 .img-div img {
@@ -96,4 +105,85 @@
   height: 100%;
   object-fit: cover;
   height: auto;
+}
+
+.PetDetails .adopt-btn {
+  max-width: 300px;
+  min-width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  border: 2px solid var(--filters-black);
+  font-weight: 700;
+  font-size: 28px;
+  font-family: "Trebuchet MS", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0.5;
+  padding: 17px;
+  overflow: hidden;
+}
+
+.PetDetails .adopt-btn {
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--adopt-badge-green);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    bottom 0.3s ease-in-out;
+  white-space: nowrap;
+  position: absolute;
+}
+
+.adopt-btn:hover {
+  bottom: 38px;
+}
+
+.adopt-btn:disabled {
+  bottom: 30px;
+  background-color: var(--adopt-badge-green-disabled);
+}
+
+@media (max-width: 1670px) {
+  .PetPage {
+    padding: 20px 40px 40px 40px;
+  }
+}
+
+@media (max-width: 1210px) {
+  .img-text-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-btn-div {
+    padding-left: 40px;
+  }
+
+  .home-btn-div .home-btn {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 710px) {
+  .PetDetails {
+    height: 330px;
+  }
+
+  .PetDetails .adopt-btn {
+    position: relative;
+    top: 30px;
+    margin: 0px 25px;
+    font-size: 30px;
+    padding: 30px;
+    border-radius: 30px;
+  }
+
+  .PetDetails p,
+  .desc-div,
+  .desc-div h3,
+  .description {
+    font-size: 30px;
+  }
 }
