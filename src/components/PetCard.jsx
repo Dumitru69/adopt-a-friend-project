@@ -13,7 +13,11 @@ function PetCard({ pet }) {
 
   return (
     <div className="pet-card-div">
-      <img className="petImage" src={pet.image} alt={pet.petName} />
+      <img
+        className="petImage"
+        src={`${process.env.PUBLIC_URL}${pet.image}`}
+        alt={pet.petName}
+      />
       <div className="pet-text-div">
         <h1 className="petName">{pet.petName}</h1>
         <p>{pet.breed}</p>

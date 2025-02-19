@@ -1,6 +1,6 @@
 const getPetsData = async () => {
   try {
-    const response = await fetch("/database.json");
+    const response = await fetch(`${process.env.PUBLIC_URL}/database.json`);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }

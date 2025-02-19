@@ -7,9 +7,13 @@ function Header({ darkMode, toggleDarkMode }) {
   return (
     <div className="header-background">
       <div className="header-div max-space-available">
-        <Link to={"/"}>
-          <img src="/imgs/adopt a friend logo.png" alt="adopt a friend logo" />
+        <Link to="/">
+          <img
+            src={`${process.env.PUBLIC_URL}/imgs/adopt-a-friend-logo.png`}
+            alt="adopt a friend logo"
+          />
         </Link>
+
         <h1>Adopt before you buy!</h1>
         <button className="theme-btn" onClick={toggleDarkMode}>
           {darkMode ? (

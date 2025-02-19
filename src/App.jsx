@@ -8,17 +8,22 @@ import PetPage from "./components/PetPage";
 import Footer from "./components/Footer";
 import AdoptionPage from "./components/AdoptionPage";
 import getPetsData from "./utils/getPetsData";
-import LoadingScreen from "./components/LoadingScreen";
+
+const defaultFilters = {
+  breed: [],
+  type: [],
+  gender: [],
+  minAge: "",
+  maxAge: "",
+};
 
 const App = () => {
-  const [petsData, setPetsData] = useState([]);
-  const [filters, setFilters] = useState({
-    breed: [],
-    type: [],
-    gender: [],
-    age: "",
+  const [filters, setFilters] = useState(() => {
+    const storedFilters = localStorage.getItem("filters");
+    return storedFilters ? JSON.parse(storedFilters) : defaultFilters;
   });
 
+  const [petsData, setPetsData] = useState([]);
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme") === "dark"
   );
@@ -37,14 +42,13 @@ const App = () => {
     getPetsData().then((data) => setPetsData(data));
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("filters", JSON.stringify(filters));
+  }, [filters]);
+
   const filteredPets = petsData.filter((pet) => {
     const minAge = filters.minAge || 0;
     const maxAge = filters.maxAge || Infinity;
-
-    if (!pet) {
-      return <LoadingScreen />;
-    }
-
     return (
       (filters.breed.length === 0 || filters.breed.includes(pet.breed)) &&
       (filters.type.length === 0 || filters.type.includes(pet.type)) &&
@@ -82,9 +86,9 @@ const App = () => {
                 </div>
               </div>
             }
-          ></Route>
-          <Route path="/pets/:id" element={<PetPage />}></Route>
-          <Route path="/adoption-page" element={<AdoptionPage />}></Route>
+          />
+          <Route path="/pets/:id" element={<PetPage />} />
+          <Route path="/adoption-page" element={<AdoptionPage />} />
         </Routes>
         <Footer />
       </Router>

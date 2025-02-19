@@ -7,9 +7,9 @@ import getPetsData from "../utils/getPetsData";
 import LoadingScreen from "./LoadingScreen";
 
 const defaultFilters = {
+  breed: [],
   type: [],
   gender: [],
-  breed: [],
   minAge: "",
   maxAge: "",
 };
@@ -23,7 +23,7 @@ const Filters = ({ filters, setFilters }) => {
     const fetchPets = async () => {
       try {
         const data = await getPetsData();
-        setPets(data); // Update the pets state here
+        setPets(data);
         setLoading(false);
       } catch (err) {
         setError(err.message);
@@ -38,18 +38,20 @@ const Filters = ({ filters, setFilters }) => {
     () => [...new Set(pets.map((pet) => pet.gender))],
     [pets]
   );
+
   const petTypes = useMemo(
     () => [...new Set(pets.map((pet) => pet.type))],
     [pets]
   );
 
   const uniqueBreeds = useMemo(() => {
-    if (
-      !filters.type.length &&
-      !filters.gender.length &&
-      !filters.minAge &&
-      !filters.maxAge
-    ) {
+    const isFilterActive =
+      filters.type.length > 0 ||
+      filters.gender.length > 0 ||
+      filters.minAge !== "" ||
+      filters.maxAge !== "";
+
+    if (!isFilterActive) {
       return [...new Set(pets.map((pet) => pet.breed))];
     }
 
@@ -103,6 +105,10 @@ const Filters = ({ filters, setFilters }) => {
 
   if (loading) {
     return <LoadingScreen />;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
   }
 
   return (

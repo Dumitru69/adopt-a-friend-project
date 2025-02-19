@@ -6,7 +6,7 @@ import "./css/shared.css";
 import React, { useEffect, useState } from "react";
 import getPetsData from "../utils/getPetsData";
 import LoadingScreen from "./LoadingScreen";
-import { useParams, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function AdoptionPage() {
   const [pets, setPets] = useState([]);
@@ -25,9 +25,9 @@ function AdoptionPage() {
       try {
         const data = await getPetsData();
         setPets(data);
-        setLoading(false);
       } catch (err) {
-        setError(err.message);
+        setError("Failed to load pet data. Please try again later.");
+      } finally {
         setLoading(false);
       }
     };
@@ -37,6 +37,19 @@ function AdoptionPage() {
 
   if (loading) {
     return <LoadingScreen />;
+  }
+
+  if (error) {
+    return (
+      <div className="error-message">
+        <p>{error}</p>
+        <Link to="/">
+          <button className="home-btn btn">
+            <i className="bi bi-house-heart-fill"></i> Home
+          </button>
+        </Link>
+      </div>
+    );
   }
 
   const handleSubmit = (e) => {
@@ -52,15 +65,12 @@ function AdoptionPage() {
     });
   };
 
-  const submitMessage = () => {
-    return (
-      <h3 className="submit-msg">
-        {
-          "Thank you for offering a home to one of our furry friends! :) We will contact you for finishing the adoption process"
-        }
-      </h3>
-    );
-  };
+  const submitMessage = () => (
+    <h3 className="submit-msg">
+      Thank you for offering a home to one of our furry friends! :) We will
+      contact you to finish the adoption process.
+    </h3>
+  );
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -74,7 +84,7 @@ function AdoptionPage() {
     <div className="max-space-available adopt-page-full">
       <div className="home-btn-div padding-left">
         <Link to="/">
-          <button className="home-btn btn ">
+          <button className="home-btn btn">
             <i className="bi bi-house-heart-fill"></i> Home
           </button>
         </Link>
@@ -82,12 +92,13 @@ function AdoptionPage() {
       <div className="adopt-page max-space-available">
         <form className="adopt-page-content" onSubmit={handleSubmit}>
           <div>
-            {!submitted && (
+            {!submitted ? (
               <h3 className="form-title">
                 Please fill out this form to bring your new furry friend home!
               </h3>
+            ) : (
+              submitMessage()
             )}
-            {submitted && submitMessage()}
           </div>
           <div className="data-section">
             <label>First Name:</label>

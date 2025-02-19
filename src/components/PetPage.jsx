@@ -31,7 +31,10 @@ const PetPage = () => {
       </div>
       <div className="img-text-div">
         <div className="img-div">
-          <img src={pet.image} alt={pet.petName} />
+          <img
+            src={`${process.env.PUBLIC_URL}${pet.image}`}
+            alt={pet.petName}
+          />
         </div>
         <div className="PetDetails">
           <p>Name : {pet.petName}</p>
