@@ -5,10 +5,10 @@ const getPetsData = async () => {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const data = await response.json();
-    return data.pets; // Assuming your data has a `pets` array
+    return data.pets;
   } catch (error) {
     console.error("Error fetching JSON:", error);
-    return []; // Return an empty array in case of an error
+    return [];
   }
 };
 
