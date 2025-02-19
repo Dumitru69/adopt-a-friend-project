@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/adopt-a-friend-project/static/css/main.32c5c237.css",
-    "main.js": "/adopt-a-friend-project/static/js/main.7645d236.js",
+    "main.css": "/adopt-a-friend-project/static/css/main.51ffec79.css",
+    "main.js": "/adopt-a-friend-project/static/js/main.ef9b1620.js",
     "static/media/bootstrap-icons.woff?": "/adopt-a-friend-project/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
     "static/media/bootstrap-icons.woff2?": "/adopt-a-friend-project/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
     "index.html": "/adopt-a-friend-project/index.html",
-    "main.32c5c237.css.map": "/adopt-a-friend-project/static/css/main.32c5c237.css.map",
-    "main.7645d236.js.map": "/adopt-a-friend-project/static/js/main.7645d236.js.map"
+    "main.51ffec79.css.map": "/adopt-a-friend-project/static/css/main.51ffec79.css.map",
+    "main.ef9b1620.js.map": "/adopt-a-friend-project/static/js/main.ef9b1620.js.map"
   },
   "entrypoints": [
-    "static/css/main.32c5c237.css",
-    "static/js/main.7645d236.js"
+    "static/css/main.51ffec79.css",
+    "static/js/main.ef9b1620.js"
   ]
 }
